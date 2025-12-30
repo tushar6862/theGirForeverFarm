@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-display: 'Playfair Display', serif;
+
+  /* Nature Inspired Palette - Earth Tones & Fresh Greens */
+  --background: 40 33% 98%;      /* Soft cream/off-white */
+  --foreground: 120 4% 15%;      /* Dark charcoal/brown-black */
+
+  --primary: 142 35% 35%;        /* Deep Forest Green */
+  --primary-foreground: 40 33% 98%;
+
+  --secondary: 35 40% 90%;       /* Light beige/sand */
+  --secondary-foreground: 25 20% 30%;
+
+  --muted: 140 10% 94%;          /* Very light sage */
+  --muted-foreground: 120 4% 40%;
+
+  --accent: 25 60% 55%;          /* Terracotta/Earth Orange */
+  --accent-foreground: 40 33% 98%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 35 15% 85%;
+  --input: 35 15% 85%;
+  --ring: 142 35% 35%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 120 4% 15%;
+
+  --radius: 0.75rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/20;
+    font-family: var(--font-sans);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    @apply tracking-tight font-semibold text-primary/90;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary/20 rounded-full hover:bg-primary/40 transition-colors;
+}
+
+/* Utility for text balance */
+.text-balance {
+  text-wrap: balance;
+}
