@@ -7,6 +7,7 @@
     "dev": "cross-env NODE_ENV=development tsx server/index.ts",
     "dev:local": "cross-env DATABASE_URL=postgresql://postgres:postgres@localhost:5432/postgres NODE_ENV=development tsx server/index.ts",
     "build": "tsx script/build.ts",
+    "client:build": "vite build --root client --outDir client/dist",
     "start": "cross-env NODE_ENV=production node dist/index.cjs",
     "serve": "cross-env PORT=5000 NODE_ENV=production node dist/index.cjs",
     "check": "tsc",
